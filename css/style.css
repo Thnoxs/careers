@@ -1,0 +1,75 @@
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Custom Scrollbar */
+.custom-scroll::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 0.625rem;
+}
+
+/* Clean Flat Checkbox */
+.minimal-checkbox {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.0938rem solid #cbd5e1;
+  border-radius: 0.25rem;
+  display: grid;
+  place-content: center;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.minimal-checkbox::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.625rem;
+  color: white;
+  transform: scale(0);
+  transition: 100ms transform ease-in-out;
+}
+.minimal-checkbox:checked {
+  background-color: #0f172a;
+  border-color: #0f172a;
+}
+.minimal-checkbox:checked::before {
+  transform: scale(1);
+}
+
+/* Mobile Responsive Fixes */
+@media (max-width: 64rem) {
+  .sidebar-hidden {
+    display: none;
+  }
+  .main-full {
+    width: 100%;
+  }
+  aside {
+    position: fixed;
+    left: -100%;
+    transition: 0.3s;
+    height: 100vh;
+    width: 17.5rem;
+  }
+  aside.active {
+    left: 0;
+  }
+  .menu-btn {
+    display: block !important;
+  }
+}
